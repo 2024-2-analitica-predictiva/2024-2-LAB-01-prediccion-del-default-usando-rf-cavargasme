@@ -211,7 +211,7 @@ import gzip
 if not os.path.exists("../files/models"):
     os.makedirs("../files/models")
     
-with open("../files/models/model.pkl.gz", "wb") as file:
+with gzip.open("../files/models/model.pkl.gz", "wb") as file:
     pickle.dump(grid_search_pipeline, file)
 
 
