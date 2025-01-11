@@ -206,11 +206,12 @@ print(grid_search_pipeline.score(x_test, y_test))
 
 import os
 import pickle
+import gzip
 
 if not os.path.exists("../files/models"):
     os.makedirs("../files/models")
     
-with open("../files/models/model.pkl", "wb") as file:
+with open("../files/models/model.pkl.gz", "wb") as file:
     pickle.dump(grid_search_pipeline, file)
 
 
