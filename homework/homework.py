@@ -105,8 +105,8 @@ import pickle
 import numpy as np
 
 # Carga de datos
-train_data_zip = '../files/input/train_data.csv.zip'
-test_data_zip = '../files/input/test_data.csv.zip'
+train_data_zip = 'files/input/train_data.csv.zip'
+test_data_zip = 'files/input/test_data.csv.zip'
 
 # Extraccion de los datos de los archivos zip
 train_data=pd.read_csv(
@@ -216,7 +216,7 @@ model.fit(x_train, y_train)
 # Recuerde que es posible guardar el modelo comprimido usanzo la libreria gzip.
 #
 
-with open('../files/models/model.pkl', 'wb') as f:
+with open('files/models/model.pkl', 'wb') as f:
     pickle.dump(model, f)
 
 #
@@ -231,7 +231,7 @@ with open('../files/models/model.pkl', 'wb') as f:
 
 # Cargo el modelo
 
-with open('../files/models/model.pkl', 'rb') as f:
+with open('files/models/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Calculo las metricas
@@ -292,4 +292,4 @@ cm_matrix_test = {
 
 # Guardar las metricas
 metrics = [metrics_train, metrics_test, cm_matrix_train, cm_matrix_test]
-pd.DataFrame(metrics).to_json('../files/output/metrics.json', orient='records', lines=True)
+pd.DataFrame(metrics).to_json('files/output/metrics.json', orient='records', lines=True)
